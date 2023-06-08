@@ -1,14 +1,14 @@
 import { Router } from "express";
 const users = [];
-const userRouter = Router();
+const usersRouter = Router();
 
-userRouter.get('/',(req,res)=>{
+usersRouter.get('/',(req,res)=>{
     res.send(users);
 });
 
-userRouter.post('/', (req, res)=>{
+usersRouter.post('/', (req, res)=>{
     const user = req.body
     users.push(user)
-    res.status(201).send(user);
+    res.status(201).send(users);
 });
 export { usersRouter}

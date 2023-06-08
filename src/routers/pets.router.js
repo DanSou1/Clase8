@@ -8,8 +8,8 @@ petsRouter.get('/',(req,res)=>{
 
 petsRouter.post('/', (req, res)=>{
     const pet = req.body
-    users.push(pet)
-    res.status(201).send(pet);
+    pets.push(pet)
+    res.status(201).send(pets);
 });
 
-export {petsrouter};
+export {petsRouter};
