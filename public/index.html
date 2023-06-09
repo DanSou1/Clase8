@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir imagenes</title>
+</head>
+<body>
+    <center>
+        <h1>Esto es un servidor estatico</h1>
+        <img style="width: 40%; height: 40%;" src="./img/gatito.jpg" alt="img de gato">
+        <form method="post" action="/api/pets">
+            <input type="text" required id="name" name="name" placeholder="Nombre Mascota">
+            <input type="text" required id="tipo" name="tipo" placeholder="Tipo Mascota">
+            <button type="submit">Envielo</button>
+        </form>
+    </center>
+</body>
+</html>
