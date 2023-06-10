@@ -1,4 +1,5 @@
 import { Router } from "express";
+import {imgUploader} from "../configs/uploadimg"
 const pets = [];
 const petsRouter = Router();
 //punto de control con middelware
@@ -13,8 +14,12 @@ petsRouter.get('/',(req,res)=>{
     res.send(pets);
 });
 
-petsRouter.post('/', (req, res)=>{
+petsRouter.post('/',imgUploader.single('img'), (req, res)=>{
+    if (!req.file) {
+        res.status(401).send('No pudo ser cargada')
+    }
     const pet = req.body
+    pet.img = req.file.path;
     pets.push(pet)
     res.status(201).send(pets);
 });
